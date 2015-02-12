@@ -24,7 +24,8 @@ namespace GuessingGameGUI
         private int usersGuess;   //The users's guess
         private int lastGuess; 	 //the user's last guess
         private bool guessCloser; //true if current guess closer than the last one
-        private bool guessSameDistance; //true if the user repeated the same guess twice
+        private bool guessSameDistance; //true if current guess is same distance from
+                                        //secret as the last guess
 
         //a status message to give to the user
         private string status;
@@ -67,6 +68,7 @@ namespace GuessingGameGUI
             }
         }
 
+       //true if current guess is same distance from secret number as last guess
         public bool GuessSameDistance 
         {
             get
@@ -121,6 +123,7 @@ namespace GuessingGameGUI
             }
         }
 
+       //the game's status message
         public string Status 
         {
             get 
@@ -147,7 +150,8 @@ namespace GuessingGameGUI
         //and sets the LastGuessValid property to false.
         //Otherwise, saves the user's guess, increments the tries counter
         //and updates the status property if the guess was correct.
-        //Parameter:
+        //Also compares this guess to previous guess 
+       //Parameter:
         //guess - a string containing the users Guess.
         public void TryGuess(string guess)
         {
@@ -166,8 +170,8 @@ namespace GuessingGameGUI
 
                 usersGuess = value; //save the users guess
                 guessCloser = IsCloser(); //determine whether it's closer than the last one
-                guessSameDistance = IsSameDistance(); //determine whether this guess is a repeat of the last one 
-
+                guessSameDistance = IsSameDistance(); //determine whether it's the same distance
+                                                      //from the secret as the last one
                 //this guess will be the "last guess" on the next call
                 lastGuess = usersGuess;
 
@@ -183,21 +187,22 @@ namespace GuessingGameGUI
             }
         }
 
-        public int getWinningNumTries()
-        {
-            return (int)Math.Ceiling(Math.Log(HI - LOW) / Math.Log(2));
-        }
-
         //Private methods
 
-        private bool IsCloser() 
+       //returns true if this guess is closer than the last one
+       //if this is the first guess returns false
+       private bool IsCloser() 
         {
-            return Math.Abs(secretNum - usersGuess) < Math.Abs(secretNum - lastGuess);
+            return NumTries > 0 && 
+               Math.Abs(secretNum - usersGuess) < Math.Abs(secretNum - lastGuess);
         }
 
+       //returs true if this guess is the same distance as the last one
+       //returns false if this is the first guess
         private bool IsSameDistance()
         {
-           return Math.Abs(usersGuess - secretNum) == 
+           return NumTries > 0 &&
+                  Math.Abs(usersGuess - secretNum) == 
                   Math.Abs(lastGuess - secretNum);
         }
 

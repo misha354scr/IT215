@@ -73,8 +73,6 @@ namespace GuessingGameGUI
          }
       }
 
-
-
       //Resets form to state it should have
       //after the user has guessed correctly
       private void DoAfterCorrectGuessTasks()
@@ -143,8 +141,8 @@ namespace GuessingGameGUI
          //user guessed wrong
          else
          {
-            //if this isn't the first guess and if this guess is different from the last one
-
+            //if this isn't the first guess and if this guess 
+            //is not the same distance from the secret as the last guess
             if (g.NumTries > 1 && !g.GuessSameDistance)
             {
                if (g.GuessCloser)
