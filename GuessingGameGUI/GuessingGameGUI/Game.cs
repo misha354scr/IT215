@@ -24,7 +24,7 @@ namespace GuessingGameGUI
         private int usersGuess;   //The users's guess
         private int lastGuess; 	 //the user's last guess
         private bool guessCloser; //true if current guess closer than the last one
-        private bool guessRepeat; //true if the user repeated the same guess twice
+        private bool guessSameDistance; //true if the user repeated the same guess twice
 
         //a status message to give to the user
         private string status;
@@ -67,11 +67,11 @@ namespace GuessingGameGUI
             }
         }
 
-        public bool GuessRepeat 
+        public bool GuessSameDistance 
         {
             get
             {
-                return guessRepeat;
+                return guessSameDistance;
             }
         }
 
@@ -166,7 +166,7 @@ namespace GuessingGameGUI
 
                 usersGuess = value; //save the users guess
                 guessCloser = IsCloser(); //determine whether it's closer than the last one
-                guessRepeat = IsRepeat(); //determine whether this guess is a repeat of the last one 
+                guessSameDistance = IsSameDistance(); //determine whether this guess is a repeat of the last one 
 
                 //this guess will be the "last guess" on the next call
                 lastGuess = usersGuess;
@@ -195,9 +195,10 @@ namespace GuessingGameGUI
             return Math.Abs(secretNum - usersGuess) < Math.Abs(secretNum - lastGuess);
         }
 
-        private bool IsRepeat()
+        private bool IsSameDistance()
         {
-           return usersGuess == lastGuess;
+           return Math.Abs(usersGuess - secretNum) == 
+                  Math.Abs(lastGuess - secretNum);
         }
 
         //sets the status string after a guess has been entered

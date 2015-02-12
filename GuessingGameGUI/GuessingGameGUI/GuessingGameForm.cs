@@ -137,29 +137,24 @@ namespace GuessingGameGUI
       // sets the background color after reading a guess
       private void SetBackColor()
       {
-         Debug.WriteLine("entered backcolor");
          //if user guessed correctly, make background light green
          if (g.Guessed) this.BackColor = Color.LightGreen;
 
          //user guessed wrong
          else
          {
-            Debug.WriteLine("back color, processing wrong guess");
             //if this isn't the first guess and if this guess is different from the last one
-            Debug.WriteLine("right before the if statement that makes sure not first guess and not same guess as last");
 
-            if (g.NumTries > 1 && !g.GuessRepeat)
+            if (g.NumTries > 1 && !g.GuessSameDistance)
             {
                if (g.GuessCloser)
                //user got closer, so make screen red for "warmer"
                {
-                  Debug.WriteLine("setbackcolor: setting salmon");
                   this.BackColor = Color.LightSalmon;
                }
                //user is further away, so make screen blue for "cold"
                else
                {
-                  Debug.WriteLine("setbackcolor: setting green");
                   this.BackColor = Color.LightBlue;
                }
             }
