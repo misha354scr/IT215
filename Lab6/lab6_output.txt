@@ -1,0 +1,13 @@
+Custom Exception throw from MethodH
+
+   at ClassWithNestedMethods.MethodH() in f:\Lab6\Lab6\Program.cs:line 68
+   at ClassWithNestedMethods.MethodG() in f:\Lab6\Lab6\Program.cs:line 63
+   at ClassWithNestedMethods.MethodF() in f:\Lab6\Lab6\Program.cs:line 58
+   at ClassWithNestedMethods.MethodE() in f:\Lab6\Lab6\Program.cs:line 53
+   at ClassWithNestedMethods.MethodD() in f:\Lab6\Lab6\Program.cs:line 48
+   at ClassWithNestedMethods.MethodC() in f:\Lab6\Lab6\Program.cs:line 43
+   at ClassWithNestedMethods.MethodB() in f:\Lab6\Lab6\Program.cs:line 38
+   at ClassWithNestedMethods.MethodA() in f:\Lab6\Lab6\Program.cs:line 33
+   at ClassWithNestedMethods.Main(String[] args) in f:\Lab6\Lab6\Program.cs:line
+ 76
+Press any key to continue . . .

@@ -1,0 +1,55 @@
+1) Throw a base class exception, ExceptionA
+Caught by catch block that has ExceptionA
+ExceptionA: Exception thrown by Exception Class ExceptionA
+   at ExceptionTester.Main(String[] args) in f:\Lab4\Lab4\ExceptionTester.cs:lin
+e 15
+
+
+
+
+2) Throw a derived-class ExceptionB
+
+
+ExceptionB caught in ExceptionA catch block:
+ExceptionB: Exception thrown by Exception Class ExceptionB
+   at ExceptionTester.Main(String[] args) in f:\Lab4\Lab4\ExceptionTester.cs:lin
+e 37
+
+
+
+3) About to throw Exception C:
+Caught by catch block that has ExceptionC
+ExceptionC: Exception C occured...
+   at ExceptionTester.Main(String[] args) in f:\Lab4\Lab4\ExceptionTester.cs:lin
+e 52
+
+
+
+4) InnerException. Calling method that throws Exception.
+Inside method, about to throw Exception C.
+Caught by catch block that has ExceptionC
+ExceptionC: Exception C occured...
+   at ExceptionTester.MethodThatThrowsException() in f:\Lab4\Lab4\ExceptionTeste
+r.cs:line 102
+
+Caught by catch block that has ExceptionC
+ExceptionC: Caught exception, re-throwing it back ---> ExceptionC: Exception C o
+ccured...
+   at ExceptionTester.MethodThatThrowsException() in f:\Lab4\Lab4\ExceptionTeste
+r.cs:line 102
+   --- End of inner exception stack trace ---
+   at ExceptionTester.MethodThatThrowsException() in f:\Lab4\Lab4\ExceptionTeste
+r.cs:line 107
+   at ExceptionTester.Main(String[] args) in f:\Lab4\Lab4\ExceptionTester.cs:lin
+e 75
+
+Press any key to continue . . .
+
+
+
+
+
+
+
+
+

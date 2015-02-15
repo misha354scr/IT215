@@ -1,0 +1,17 @@
+Generated List:
+v a n d a s x u f v b z w a y k b h a c f n e l j d b s l h
+
+Ascending order:
+a a a a b b b c d d e f f h h j k l l n n s s u v v w x y z
+
+Descending order:
+z y x w v v u s s n n l l k j h h f f e d d c b b b a a a a
+
+Ascending order, no duplicates:
+a b c d e f h j k l n s u v w x y z
+
+Press any key to continue . . .
+
+
+
+

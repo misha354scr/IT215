@@ -1,0 +1,13 @@
+Enter a sentence:
+this is a bat this is a ball this is a player
+
+You entered:
+this is a bat this is a ball this is a player
+
+Distinct words:
+a ball bat is player this
+Press any key to continue . . .
+
+
+
+
