@@ -91,14 +91,14 @@ namespace GuessingGameGUI
 
          //update the number of tries textbox
          lblNumGuesses.Text = g.NumTries.ToString();
-
+        
          //Update the status message label
          lblMessage.Text = g.Status;
 
          //enable the new game button
          btnNewGame.Enabled = true;
 
-         //clear the guess textbox
+         //clear the guess textbox 
          txtGuess.Clear();
       }
 
@@ -127,6 +127,8 @@ namespace GuessingGameGUI
          lblMessage.Text = g.Status;
          lblSecret.Text = g.SecretNum.ToString(); //for debugging
          UpdateNumTries();
+
+         txtGuess.Focus(); //give focus to guess text  box
 
          txtGuess.Clear(); //clear content from last games
          rtxHistory.Clear();
